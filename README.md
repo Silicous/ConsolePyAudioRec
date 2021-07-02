@@ -17,7 +17,7 @@ Following libraries were used:
 - **timeit**
 
 ---
-# #How it works
+## How it works
 
 At the beginning, user should specify path where to save file and filename. 
 Otherwise, file will be saved in current folder with default name as **record.wav**.
