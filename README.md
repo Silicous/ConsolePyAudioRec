@@ -7,17 +7,17 @@ Tested on Windows/Linux.
 
 Following libraries were used:
 
-####*Sound*
+#### *Sound*
 - **SoundDevice** - to handle input/output. Also uses PyAudio inside.
 - **SoundFile**   - to read/write audio files.
 	
-####*System*
+#### *System*
 - **sys**
 - **os**
 - **timeit**
 
 ---
-##How it works
+# #How it works
 
 At the beginning, user should specify path where to save file and filename. 
 Otherwise, file will be saved in current folder with default name as **record.wav**.
@@ -34,6 +34,6 @@ At the end of any case, program will print record time, path and filename.
 
 ## Files in repository 
 
-- **recorder.py** - this is the main module. Just import it and use wherever you want.
-- **main.py** - example program. Uses *start, stop, show_active_devices, set_default_device* methods 
+- [**recorder.py**](https://github.com/Silicous/ConsolePyAudioRec/blob/main/recorder.py) - this is the main module. Just import it and use wherever you want.
+- [**main.py**](https://github.com/Silicous/ConsolePyAudioRec/blob/main/main.py) - example program. Uses *start, stop, show_active_devices, set_default_device* methods 
   to showcase recorder's functionality
