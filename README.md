@@ -8,8 +8,8 @@ Tested on Windows/Linux.
 Following libraries were used:
 
 #### *Sound*
-- **SoundDevice** - to handle input/output. Also uses PyAudio inside.
-- **SoundFile**   - to read/write audio files.
+- [**SoundDevice**](https://python-sounddevice.readthedocs.io/en/0.4.1/) - to handle input/output. Also uses PyAudio inside.
+- [**SoundFile**](https://pysoundfile.readthedocs.io/en/latest/)   - to read/write audio files.
 	
 #### *System*
 - **sys**
