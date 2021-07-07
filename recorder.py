@@ -10,8 +10,21 @@ import soundfile as sf
 
 
 class Recorder:
-    def __init__(self, file_path=os.getcwd() + '/record.wav'):
-        self.save_to = file_path
+    def __init__(self, *arg):
+        self.save_to = f'/record.wav'
+        self.path = os.getcwd()
+        self.name = self.save_to
+
+        print(arg)
+        if len(arg) > 1:
+            self.save_to = arg[1]
+
+            path = arg[1].split('/')
+            self.name = path
+            if len(path) > 1:
+                *path, self.name = path
+                self.path = '/'.join(path)
+
         self.sound_input = queue.Queue()
 
         self.user_thread = Thread(target=self._run_user)
@@ -84,7 +97,7 @@ class Recorder:
                 while not self.sound_input.empty():
                     file.write(self.sound_input.get())
 
-        print(f"Finished. Your file is saved in {''.join(self.save_to)} file\n")
+        print(f"Finished. Your file is saved in {self.path} as {''.join(self.name)} file\n")
 
     def start(self):
         print('\n', '\\' * 80, f"\n{' ' * 30}Python AudioRec\n", '\\' * 80, '\n')
