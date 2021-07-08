@@ -13,9 +13,8 @@ class Recorder:
     def __init__(self, *arg):
         self.save_to = f'/record.wav'
         self.path = os.getcwd()
-        self.name = self.save_to
+        self.name = self.save_to.split('/')
 
-        print(arg)
         if len(arg) > 1:
             self.save_to = arg[1]
 
@@ -85,7 +84,7 @@ class Recorder:
             indata *= 2  # to increase volume make smth like 'x * data", where 'x' is a multiplier
 
             outdata[:] = indata
-            self.sound_input.put(indata.copy())
+            self.sound_input.put_nowait(indata.copy())
 
         with sf.SoundFile(self.save_to, mode='w+', samplerate=44100, subtype='PCM_24', channels=2) as file:
             with sd.Stream(samplerate=44100, channels=2, callback=callback):
